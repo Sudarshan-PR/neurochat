@@ -3,7 +3,6 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1" name="viewport">
-  <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" -->
   <!-- JQuery for updating scroll bar -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <title>Decentralized chat</title>
@@ -55,7 +54,6 @@
         display:flex;
         flex-wrap:wrap;
         justify-content:center;
-        border: 2px solid white;
         display: flow-root;
         position: relative;
         bottom: 5px;
@@ -91,12 +89,10 @@
 <body>
   <p id="kek" ></p>
   <p class="subheading">A completely decentralised p2p chat right in your browser</p>
-  <!--div class="content"-->
-    <div class="container" id="content">
+  <div class="container" id="content">
     <pre id="log"></pre>
-    </div>
-    <pre id="input" contenteditable="true" autofocus></pre>
-  <!--/div-->
+  </div>
+  <pre id="input" contenteditable="true" autofocus></pre>
 
 </body>
 <script>
@@ -112,11 +108,13 @@ b.on("seen", function(address) { log(address + " [connected]"); });
 
 //recive message
 b.on("message", function(address, message) {
+  document.getElementById('content').style.textAlign = "left";
   log(address + ": " + message);
   updateScroll();
 });
 //send message
 document.getElementById("input").onkeydown = function(ev) {
+  document.getElementById('content').style.textAlign = "right";
     if (ev.keyCode == 13) {
       if (b.lastwirecount) {
         b.send(ev.target.textContent);
