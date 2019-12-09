@@ -108,13 +108,11 @@ b.on("seen", function(address) { log(address + " [connected]"); });
 
 //recive message
 b.on("message", function(address, message) {
-  document.getElementById('content').style.textAlign = "left";
   log(address + ": " + message);
   updateScroll();
 });
 //send message
 document.getElementById("input").onkeydown = function(ev) {
-  document.getElementById('content').style.textAlign = "right";
     if (ev.keyCode == 13) {
       if (b.lastwirecount) {
         b.send(ev.target.textContent);
