@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>NeuroChat | Home</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="https://unpkg.com/augmented-ui/augmented.css">
+
+        <style>
+
+            body{
+                background-color: #043353;
+                font-family:Tomorrow,monospace,serif;
+                letter-spacing:1px;
+            }
+            #heading{
+                color: #FAF8F0;
+                font-size: 2.5em;
+                text-shadow: 0 0px 10px #FAF8F0;
+                position: relative;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 5%;
+                width: 310px;
+                height: 45px;
+                margin: 10px;
+                --aug-border: 5px;
+                --aug-inset: 5px;
+                padding: 10px;
+                text-align: center;
+                --aug-border-bg: #E44652;
+                --aug-inset-bg: #E44652;
+            }
+            form{
+                padding: 2em;
+
+            }
+            input{
+                padding: 0.6em 1.4em;
+                font-weight: bold;
+                color: #043353;
+                background-color: #FAF8F0;
+                border: none;
+                position: fixed;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 15%;
+                width: 200px;
+                height: 20px;
+                margin: 10px;
+                --aug-border: 5px;
+                --aug-inset: 5px;
+                padding: 10px;
+                text-align: center;
+            }
+            label{
+                color: #E44652;
+                font-weight: bold;
+                font-size: 1.5em;
+                text-shadow: 0 0px 10px #E44652;
+                position: relative;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 20%;
+                width: 310px;
+                height: 45px;
+                margin: 10px;
+            }
+            #main{
+                position: fixed;
+                margin: auto;
+                top: 10%;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                height: 80%;
+                width: 25%;
+            }
+            #enter{
+                font-family:Tomorrow,monospace,serif;
+                text-shadow: 0 0px 10px #043353;
+                position: relative;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                width: 310px;
+                height: 45px;
+                margin: 10px;
+                --aug-border: 5px;
+                --aug-inset: 5px;
+                padding: 10px;
+                text-align: center;
+            }
+            #pr{
+                position: relative;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 10%;
+                width: 10px;
+                height: 10px;
+                margin: 10px;
+                text-align: center;
+                padding: 0;
+            }
+            #lpr{
+                left: 10%;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div id="main">
+            <div id="heading" augmented-ui="tl-clip br-clip exe">
+                NeuroChat
+            </div>
+            <form action="room.html" method="POST">
+                <label for="un">Username : </label><input type="text" id="us" augmented-ui="tl-clip br-clip exe" name="un" />
+                <br>
+                <br>
+                <label for="rc">Room Code : </label><input type="text" id="rc" augmented-ui="tl-clip br-clip exe" name="rc" />
+                <br>
+                <br>
+                <input type="checkbox" id="pr" name="persistant" value="y" /><label id="lpr" for="persistant">Persistant Room</label>
+                <br>
+                <br>
+                <input type="submit" augmented-ui="tl-clip br-clip exe" id="enter" name="enter" value="Enter Room">
+            </form>
+        </div>
+    </body>
+</html>
