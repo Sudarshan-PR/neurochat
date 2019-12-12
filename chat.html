@@ -2,10 +2,15 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <!-- JQuery for updating scroll bar -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/augmented-ui/augmented.css">
+  <link href="https://fonts.googleapis.com/css?family=VT323&display=swap" rel="stylesheet">
+
   <title>Decentralized chat</title>
+
   <style>
   	p{
       text-shadow: 0 0px 30px #00ff9f;
@@ -31,7 +36,8 @@
       text-shadow: 0 0 10px cyan;
     }
     body {
-      background-color: #26262b;
+      background-color: #043353;
+      font-family: 'VT323', monospace;
       font-size: 1.5em;
       padding: 0em 0.25em;
     }
@@ -57,11 +63,21 @@
         display: flow-root;
         position: relative;
         bottom: 5px;
-        width: 100%;
-        height: 70%;
         overflow-y: auto;
+        width:auto;
+        height: auto;
         scroll-behavior: smooth;
     }
+
+    .chatmain{
+      --aug-border: 5px;
+      --aug-inset: 5px;
+      --aug-border-bg: #E44652;
+      --aug-inset-bg: #FAF8F0;
+      width: 70%;
+      height: 70%;
+    }
+
     #log{
       text-align:center;
     }
@@ -83,14 +99,15 @@
   </script>
   <!-- import bugout -->
   <script src="https://chr15m.github.io/bugout/bugout.min.js" type="application/javascript"></script>
-  <link href="https://fonts.googleapis.com/css?family=Tomorrow&display=swap"
-      rel="stylesheet">
 </head>
 <body>
   <p id="kek" ></p>
   <p class="subheading">A completely decentralised p2p chat right in your browser</p>
-  <div class="container" id="content">
-    <pre id="log"></pre>
+
+  <div class="chatmain" augmented-ui="tl-clip br-clip exe">
+    <div class="container" id="content" augmented-ui="tl-clip br-clip exe">
+      <pre id="log"></pre>
+    </div>
   </div>
   <pre id="input" contenteditable="true" autofocus></pre>
 
